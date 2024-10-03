@@ -1,14 +1,14 @@
 pipeline {
     agent any
 
-    // environment {
-    //     NODEJS_HOME = tool name: 'NodeJS', type: 'NodeJSInstallation'
-    //     PATH = "${NODEJS_HOME}/bin:${env.PATH}"
-    // }
-
-    tools {
-        nodejs 'NodeJS'  // The name you configured for Node.js in Jenkins Global Tool Configuration
+    environment {
+        NODEJS_HOME = tool name: 'NodeJS', type: 'NodeJSInstallation'
+        PATH = "${NODEJS_HOME}/bin:${env.PATH}"
     }
+
+    // tools {
+    //     nodejs 'NodeJS'  // The name you configured for Node.js in Jenkins Global Tool Configuration
+    // }
 
     stages {
         stage('Clone Repository') {
